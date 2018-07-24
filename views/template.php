@@ -17,7 +17,7 @@
                     <li><a href="<?php echo BASE_URL; ?>anuncios">Meus Anúncios</a></li>
                     <li><a href="<?php echo BASE_URL; ?>login/sair">Sair</a></li>
                 <?php else: ?>
-                    <li><a href="<?php echo BASE_URL; ?>cadastro">Profissional</a></li>                    
+                    <li><a href="<?php echo BASE_URL; ?>cadastroProfissional">Profissional</a></li>                    
                     <li><a href="<?php echo BASE_URL; ?>cadastroLoja">Loja</a></li>
                     <li><a href="<?php echo BASE_URL; ?>login">Login</a></li>
                 <?php endif; ?>
