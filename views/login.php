@@ -17,5 +17,7 @@
 			<input type="password" name="senha" id="senha" class="form-control" />
 		</div>
 		<input type="submit" value="Fazer Login" class="btn btn-default" />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		Ainda não se cadastrou? <a href="<?php echo BASE_URL; ?>cadastroUsuario">Clique aqui</a>
 	</form>
 </div>

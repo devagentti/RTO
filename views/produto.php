@@ -21,7 +21,7 @@
 			<p><?php echo $info['descricao']; ?></p>
 			<br/>
 			<h3>R$ <?php echo number_format($info['valor'], 2); ?></h3>
-			<h4>Telefone: <?php echo $info['telefone']; ?></h4>
+			<h4>Telefone: <?php echo $info['celular']; ?></h4>
 		</div>
 	</div>
 </div>

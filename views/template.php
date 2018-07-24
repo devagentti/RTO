@@ -7,17 +7,18 @@
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>assets/css/style.css">          
 </head>
 <body>   
-    <nav class="navbar navbar-inverse">
+    <nav class="navbar">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a href="<?php echo BASE_URL; ?>" class="navbar-brand">Resolve Tudo Online</a>
+                <a href="<?php echo BASE_URL; ?>" class="navbar-brand text-danger">Resolve Tudo Online</a>
             </div>
             <ul class="nav navbar-nav navbar-right">
                 <?php if(isset($_SESSION['cLogin']) && !empty($_SESSION['cLogin'])): ?>
                     <li><a href="<?php echo BASE_URL; ?>anuncios">Meus Anúncios</a></li>
                     <li><a href="<?php echo BASE_URL; ?>login/sair">Sair</a></li>
                 <?php else: ?>
-                    <li><a href="<?php echo BASE_URL; ?>cadastro">Cadastre-se</a></li>
+                    <li><a href="<?php echo BASE_URL; ?>cadastro">Profissional</a></li>                    
+                    <li><a href="<?php echo BASE_URL; ?>cadastroLoja">Loja</a></li>
                     <li><a href="<?php echo BASE_URL; ?>login">Login</a></li>
                 <?php endif; ?>
             </ul>

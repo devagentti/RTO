@@ -2,6 +2,7 @@
 class loginController extends Controller {
 
     public function index() {                
+
         $this->loadTemplate('login');
     }
 
@@ -11,6 +12,7 @@ class loginController extends Controller {
         $usuario = new Usuarios();
 
         if(isset($_POST['email']) && !empty($_POST['email'])) {
+            
             $email = addslashes($_POST['email']);        
             $senha = $_POST['senha'];                          
                         

@@ -9,7 +9,7 @@ class Usuarios extends Model {
 		return $row['c'];
 	}
 
-	public function cadastrar($nome, $email, $senha, $telefone) {
+	public function cadastrar($nome, $email, $senha, $celular) {
 		
 		$sql = $this->con_db->prepare("SELECT id FROM usuarios WHERE email = :email");
 		$sql->bindValue(":email", $email);
@@ -17,17 +17,21 @@ class Usuarios extends Model {
 
 		if($sql->rowCount() == 0) {
 
-			$sql = $this->con_db->prepare("INSERT INTO usuarios SET nome = :nome, email = :email, senha = :senha, telefone = :telefone");
+			$data = new DateTime();
+			$data_format = $data->format('Y-m-d H:i');						
+			
+			$sql = $this->con_db->prepare("INSERT INTO usuarios SET nome = :nome, email = :email, senha = :senha, celular = :celular, data_cadastro = :data_cadastro");
 			$sql->bindValue(":nome", $nome);
 			$sql->bindValue(":email", $email);
 			$sql->bindValue(":senha", md5($senha));
-			$sql->bindValue(":telefone", $telefone);
+			$sql->bindValue(":celular", $celular);
+			$sql->bindValue(":data_cadastro", $data_format); 
 			$sql->execute();
-
-			return true;
+			
+			return $this->con_db->lastInsertId(); 
 
 		} else {
-			return false;
+			return 0;
 		}
 	}
 
